@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="text-center mt-4">Gerenciador de Contatos</h1>
+  
+  <app-contato-form 
+    [contatoParaEditar]="contatoSendoEditado" 
+    (salvou)="lista.carregarContatos(); contatoSendoEditado = null">
+  </app-contato-form>
+  
+  <hr>
+  
+  <app-contato-lista 
+    #lista 
+    (editarContato)="setContatoParaEditar($event)">
+  </app-contato-lista>
+</div>
